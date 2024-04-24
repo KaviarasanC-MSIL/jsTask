@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form autocomplete="off">
+        <label for="fname">Name : </label>
+        <input type="text" id="fname"><br>
+        <span id="nameError" class="error"></span><br>
+        <label for="femail">Email : </label>
+        <input type="email" id="femail" required><br>
+        <span id="emailError" class="error"></span><br>
+        <label for="fage">Age : </label>
+        <input type="number" id="fage" required><br><br>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+        <input type="text" id="searchInput" oninput="mySearch(this.value)" placeholder="Search for names..">
+    </form>
+
+    <hr>
+
+    <div>
+        Show entries:
+        <select id="entriesSelect" onchange="showEntries(this.value)">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+        </select>
+    </div><br><br>
+    <table id="dataTable">
+        <thead>
+            <tr id="tableHeaders"></tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+        <tfoot>
+            <tr id="tableFooter"></tr>        
+        </tfoot>
+    </table>
+    <button id="prevBtn" onclick="prevPage()" disabled>Previous</button>
+    <button id="nextBtn" onclick="nextPage()">Next</button>
+    <script src="scripts.js"></script>
+</body>
+</html>
